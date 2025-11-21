@@ -24,10 +24,13 @@ export default function MatemáticasTest() {
   };
 
   const score = Object.keys(answers).reduce((acc, qId) => {
-    const question = questions.find((q) => q.id == qId);
-    if (answers[qId] === question.correct) return acc + 1;
+    const questionId = Number(qId);
+    const question = questions.find((q) => q.id === questionId);
+   
+    if (question && answers[qId] === question.correct) return acc + 1;
     return acc;
   }, 0);
+
 
   return (
     <div className="pt-10">
