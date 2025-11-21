@@ -19,7 +19,7 @@ export default function MatemáticasTest() {
 
   const [answers, setAnswers] = useState({});
 
-  const handleSelect = (qId, optionIndex) => {
+  const handleSelect = (qId: string, optionIndex: number) => {
     setAnswers((prev) => ({ ...prev, [qId]: optionIndex }));
   };
 
