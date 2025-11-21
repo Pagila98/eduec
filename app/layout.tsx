@@ -10,7 +10,7 @@ export const metadata = {
   description: "Simuladores y cursos para ingreso a universidades",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es" suppressHydrationWarning>
       <body
