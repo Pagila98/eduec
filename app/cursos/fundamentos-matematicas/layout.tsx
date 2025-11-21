@@ -3,7 +3,11 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-export default function CursoLayout({ children }) {
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
+export default function CursoLayout({ children }: LayoutProps) {
   const pathname = usePathname();
 
   const links = [
