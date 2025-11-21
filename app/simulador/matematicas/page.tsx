@@ -27,7 +27,9 @@ export default function MatemáticasTest() {
     const questionId = Number(qId);
     const question = questions.find((q) => q.id === questionId);
    
-    if (question && answers[qId] === question.correct) return acc + 1;
+    if (question && answers[qId] === question.correct) 
+      return acc + 1;
+    
     return acc;
   }, 0);
 
