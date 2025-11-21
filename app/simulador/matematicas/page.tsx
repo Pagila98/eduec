@@ -17,7 +17,7 @@ export default function MatemáticasTest() {
     },
   ];
 
-  const [answers, setAnswers] = useState({});
+  const [answers, setAnswers] = useState<Record<string, number>>({});
 
   const handleSelect = (qId: string, optionIndex: number) => {
     setAnswers((prev) => ({ ...prev, [qId]: optionIndex }));
