@@ -26,13 +26,12 @@ export default function MatemáticasTest() {
   const score = Object.keys(answers).reduce((acc, qId) => {
     const questionId = Number(qId);
     const question = questions.find((q) => q.id === questionId);
-   
-    if (question && answers[qId] === question.correct) 
+
+    if (question && answers[qId] === question.correct)
       return acc + 1;
-    
+
     return acc;
   }, 0);
-
 
   return (
     <div className="pt-10">
@@ -53,12 +52,12 @@ export default function MatemáticasTest() {
 
             <div className="grid gap-3">
               {q.options.map((opt, idx) => {
-                const selected = answers[q.id] === idx;
+                const selected = answers[String(q.id)] === idx;
 
                 return (
                   <button
                     key={idx}
-                    onClick={() => handleSelect(q.id, idx)}
+                    onClick={() => handleSelect(String(q.id), idx)}
                     className={`py-3 px-4 text-left rounded-xl transition-all border 
                       ${
                         selected
@@ -79,8 +78,7 @@ export default function MatemáticasTest() {
       <div className="mt-14 p-6 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl shadow-lg">
         <h2 className="text-2xl font-semibold mb-3">Resultado</h2>
         <p className="text-gray-300">
-          Preguntas contestadas: {Object.keys(answers).length} /{" "}
-          {questions.length}
+          Preguntas contestadas: {Object.keys(answers).length} / {questions.length}
         </p>
         <p className="text-white text-xl mt-2 font-medium">
           Puntaje actual: {score}
