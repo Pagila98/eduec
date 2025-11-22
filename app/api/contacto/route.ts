@@ -9,7 +9,8 @@ export async function POST(req: Request) {
 
     const data = await resend.emails.send({
       from: "EduEc <onboarding@resend.dev>",
-      to: process.env.CONTACT_EMAIL!, // <-- AHORA USANDO VARIABLE DE ENTORNO
+      to: process.env.CONTACT_EMAIL, // <<--- AQUÍ SE USA TU VARIABLE
+      reply_to: email, // para que puedas responder al remitente
       subject: `Nuevo mensaje de contacto (${motivo})`,
       html: `
         <h2>Nuevo mensaje desde la plataforma EduEc</h2>
