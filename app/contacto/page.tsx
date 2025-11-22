@@ -125,8 +125,6 @@ export default function ContactoPage() {
 
         <form
   onSubmit={handleSubmit}
-  method="POST"
-  action="/api/contacto"
   className="
     bg-white/80 backdrop-blur-xl
     border border-gray-200 
@@ -174,7 +172,7 @@ export default function ContactoPage() {
     />
   </div>
 
-  {/* Tipo de contacto */}
+  {/* Motivo */}
   <div>
     <label htmlFor="motivo" className="block text-gray-700 font-medium mb-2">
       Motivo del contacto
@@ -218,7 +216,7 @@ export default function ContactoPage() {
     ></textarea>
   </div>
 
-  {/* ESTADOS DEL ENVÍO */}
+  {/* ESTADOS */}
   {estado === "ok" && (
     <p className="text-green-600 text-sm">
       ✅ Mensaje enviado correctamente. Te contactaremos pronto.
@@ -231,7 +229,7 @@ export default function ContactoPage() {
     </p>
   )}
 
-  {/* BOTÓN ENVIAR */}
+  {/* BOTÓN */}
   <button
     type="submit"
     disabled={estado === "enviando"}
